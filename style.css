@@ -1,0 +1,17 @@
+body {
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    max-width: 900px;
+    min-height: 100vh;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
+
+iframe {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+}
