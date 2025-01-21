@@ -1,0 +1,94 @@
+
+#EntityFormPanel {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-radius: 1rem;
+    border-color: var(--portalThemeColor6); /* #0066e4 */
+    background-color: white;
+}
+
+#EntityFormPanel fieldset {
+    margin-bottom: 0;
+}
+
+.section-title > h3 {
+    font-size: 1.375rem;
+    font-weight: 700;
+}
+
+legend.section-title > h3 {
+    border-bottom: solid #686e7759 1px;
+    padding-bottom: 0.75rem;
+}
+
+#EntityFormPanel .actions, .captcha-cell {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    border: none;
+}
+
+.captcha-cell input {
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+}
+
+.captcha-cell label {
+    display: block;
+    font-size: .875rem;
+}
+
+#EntityFormPanel h3, #EntityFormPanel label.field-label {
+    -webkit-font-smoothing: antialiased;
+    font-family: Hind, 'Noto Sans', sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+#EntityFormPanel .form-control, .form-select {
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+}
+
+#EntityFormPanel .form-control:focus {
+    box-shadow: 0 0 0 2px rgba(110, 138, 238, .75);
+}
+
+label.field-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--portalThemeColor1); /* #112337 */
+}
+
+@media (min-width: 768px) {
+    .section-title, tr p {
+        padding-left: 1.75rem;
+        padding-right: 1.75rem;
+    }
+}
+
+@media (max-width: 767px) {
+    #EntityFormPanel {
+        padding: 1.75rem;
+    }
+}
+
+/* 
+--portalThemeColor1: #112337;
+--portalThemeColor2: #64707d;
+--portalThemeColor3: #686e77;
+--portalThemeColor4: #204ce5;
+--portalThemeColor5: #F8F8F8;
+--portalThemeColor6: #0066e4;
+--portalThemeColor7: #F5fcfe;
+--portalThemeColor8: #000000;
+--portalThemeColor9: #001ab3; */
+
+/* 
+.5rem = 8px
+.75rem = 12px
+.875 = 14px
+1rem = 16px
+1.25rem = 20px
+1.375rem = 22px
+1.5rem = 24px
+1.75rem = 28px
+*/
