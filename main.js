@@ -4,7 +4,7 @@ const getQueryParam = (name) => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const iframe = document.getElementById("entity-form");
+  const iframe = document.getElementById("enquiry-form");
   const urlParam = getQueryParam("url");
   if (iframe && urlParam) {
     iframe.src = decodeURIComponent(urlParam);
