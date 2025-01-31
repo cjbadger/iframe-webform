@@ -9,6 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (iframe && urlParam) {
     iframe.src = decodeURIComponent(urlParam);
   } else {
-    console.log("Append the URL to be used as the iframe's source as a query parameter with the key 'url'; eg cjbadger.github.io/iframe-webform?url=https://example.com
+    console.log("Append the URL to be used as the iframe's source as a query parameter with the key 'url'; eg cjbadger.github.io/iframe-webform?url=https://example.com");
   }
 });
