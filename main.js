@@ -21,7 +21,7 @@ window.addEventListener("message", (event) => {
 
 const enquiryFormIframe = document.getElementById("enquiry-form");
   if (event.data?.iframeHeight) {
-    iframe.style.height = event.data?.iframeHeight + "px";
+    enquiryFormIframe.style.height = event.data?.iframeHeight + "px";
   }
 });
 
