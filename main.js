@@ -13,12 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-const trustedOrigins = [
-  "https://site-q89tn.powerappsportals.com", // Dev
-  "https://site-jtiyc.powerappsportals.com/
-  "https://mlc-enquiry-form.powerappsportals.com" // Prod
-]
-
 window.addEventListener("message", function(event) {
   if (!trustedOrigins.includes(event.origin) {
     return;
@@ -29,3 +23,10 @@ window.addEventListener("message", function(event) {
     iframe.style.height = event.data?.iframeHeight + "px";
   }
 });
+
+// Specifically for MLC
+const trustedOrigins = [
+  "https://site-q89tn.powerappsportals.com", // Dev
+  "https://site-jtiyc.powerappsportals.com", // UAT
+  "https://mlc-enquiry-form.powerappsportals.com" // Prod
+]
