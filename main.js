@@ -20,14 +20,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-window.addEventListener("message", (event) => {
-  if (!trustedOrigins.includes(event.origin)) {
-    return;
-  }
-  const enquiryFormIframe = document.getElementById("enquiry-form");
-  if (event.data?.iframeHeight) {
-    enquiryFormIframe.style.height = event.data?.iframeHeight + "px";
-  }
-});
+
+const EnquiryFormMessageHandler = () => {
+  // Specifically for MLC
+  const trustedOrigins = [
+    "https://site-q89tn.powerappsportals.com", // Dev
+    "https://site-jtiyc.powerappsportals.com", // UAT
+    "https://mlc-enquiry-form.powerappsportals.com" // Prod
+  ];
+  
+  window.addEventListener("message", (event) => {
+    if (!trustedOrigins.includes(event.origin)) {
+      return;
+    }
+    const enquiryFormIframe = document.getElementById("enquiry-form");
+    if (event.data?.iframeHeight) {
+      enquiryFormIframe.style.height = event.data?.iframeHeight + "px";
+    }
+  });
+};
+
+EnquiryFormMessageHandler();
+
 
 
