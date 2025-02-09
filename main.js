@@ -21,8 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-const EnquiryFormMessageHandler = () => {
-  // Specifically for MLC
+const EnquiryFormResizeHandler = () => {
   const trustedOrigins = [
     "https://site-q89tn.powerappsportals.com", // Dev
     "https://site-jtiyc.powerappsportals.com", // UAT
@@ -34,13 +33,13 @@ const EnquiryFormMessageHandler = () => {
       return;
     }
     const enquiryFormIframe = document.getElementById("enquiry-form");
-    if (event.data?.iframeHeight) {
+    if ((event.data?.iframeHeight) && (enquiryFormIframe)) {
       enquiryFormIframe.style.height = event.data?.iframeHeight + "px";
     }
   });
 };
 
-EnquiryFormMessageHandler();
+EnquiryFormResizeHandler();
 
 
 
