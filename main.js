@@ -17,12 +17,11 @@ window.addEventListener("message", (event) => {
   if (!trustedOrigins.includes(event.origin)) {
     return;
   }
+  const enquiryFormIframe = document.getElementById("enquiry-form");
+  if (event.data?.iframeHeight) {
+    enquiryFormIframe.style.height = event.data?.iframeHeight + "px";
+  }
 });
-
-const enquiryFormIframe = document.getElementById("enquiry-form");
-if (event.data?.iframeHeight) {
-  enquiryFormIframe.style.height = event.data?.iframeHeight + "px";
-}
 
 // Specifically for MLC
 const trustedOrigins = [
