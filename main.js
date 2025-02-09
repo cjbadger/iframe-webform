@@ -20,10 +20,9 @@ window.addEventListener("message", (event) => {
 });
 
 const enquiryFormIframe = document.getElementById("enquiry-form");
-  if (event.data?.iframeHeight) {
-    enquiryFormIframe.style.height = event.data?.iframeHeight + "px";
-  }
-});
+if (event.data?.iframeHeight) {
+  enquiryFormIframe.style.height = event.data?.iframeHeight + "px";
+}
 
 // Specifically for MLC
 const trustedOrigins = [
