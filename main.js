@@ -13,12 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-window.addEventListener("message", function(event) {
+window.addEventListener("message", (event) => {
   if (!trustedOrigins.includes(event.origin)) {
     return;
   }
+});
 
-  const enquiryFormIframe = document.getElementById("enquiry-form");
+const enquiryFormIframe = document.getElementById("enquiry-form");
   if (event.data?.iframeHeight) {
     iframe.style.height = event.data?.iframeHeight + "px";
   }
