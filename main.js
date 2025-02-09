@@ -3,6 +3,13 @@ const getQueryParam = (name) => {
   return urlParams.get(name);
 }
 
+// Specifically for MLC
+const trustedOrigins = [
+  "https://site-q89tn.powerappsportals.com", // Dev
+  "https://site-jtiyc.powerappsportals.com", // UAT
+  "https://mlc-enquiry-form.powerappsportals.com" // Prod
+]
+
 document.addEventListener("DOMContentLoaded", () => {
   const iframe = document.getElementById("enquiry-form");
   const urlParam = getQueryParam("url");
@@ -23,9 +30,4 @@ window.addEventListener("message", (event) => {
   }
 });
 
-// Specifically for MLC
-const trustedOrigins = [
-  "https://site-q89tn.powerappsportals.com", // Dev
-  "https://site-jtiyc.powerappsportals.com", // UAT
-  "https://mlc-enquiry-form.powerappsportals.com" // Prod
-]
+
