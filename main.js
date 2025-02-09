@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("message", function(event) {
-  if (!trustedOrigins.includes(event.origin) {
+  if (!trustedOrigins.includes(event.origin)) {
     return;
   }
 
