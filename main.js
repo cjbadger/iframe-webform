@@ -13,16 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-  window.addEventListener("message", function(event) {
-    console.log(`event received`);
-    console.log(`event.origin: ${event.origin}`);
-    console.log(`event.data.iframeHeight: ${event.data?.iframeHeight}`);
-    if (event.origin !== "https://site-q89tn.powerappsportals.com") {
-      return;
-    }
+const trustedOrigins = [
+  "https://site-q89tn.powerappsportals.com", // Dev
+  "https://site-jtiyc.powerappsportals.com/
+  "https://mlc-enquiry-form.powerappsportals.com" // Prod
+]
 
-    const iframe = document.getElementById("enquiry-form");
-    if (event.data?.iframeHeight) {
-      iframe.style.height = event.data?.iframeHeight + "px";
-    }
-  });
+window.addEventListener("message", function(event) {
+  if (!trustedOrigins.includes(event.origin) {
+    return;
+  }
+
+  const enquiryFormIframe = document.getElementById("enquiry-form");
+  if (event.data?.iframeHeight) {
+    iframe.style.height = event.data?.iframeHeight + "px";
+  }
+});
