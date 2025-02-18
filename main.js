@@ -5,9 +5,11 @@ const getQueryParam = (name) => {
 
 // Specifically for MLC
 const trustedOrigins = [
-  "https://site-q89tn.powerappsportals.com", // Dev
-  "https://site-jtiyc.powerappsportals.com", // UAT
-  "https://mlc-enquiry-form.powerappsportals.com" // Prod
+  "https://site-kkdli.powerappsportals.com", // WLSQ DEV
+  "https://site-tt3fl.powerappsportals.com", // WLSQ UAT
+  "https://site-q89tn.powerappsportals.com", // MLC Dev
+  "https://site-jtiyc.powerappsportals.com", // MLC UAT
+  "https://mlc-enquiry-form.powerappsportals.com" // MLC Prod
 ]
 
 document.addEventListener("DOMContentLoaded", () => {
