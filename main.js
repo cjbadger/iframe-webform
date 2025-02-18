@@ -33,8 +33,10 @@ const EnquiryFormResizeHandler = () => {
   
   window.addEventListener("message", (event) => {
     if (!trustedOrigins.includes(event.origin)) {
+      console.log(`${event.origin} is not a trusted origin`);
       return;
     }
+      console.log(`${event.origin} is a trusted origin`);
     const enquiryFormIframe = document.getElementById("enquiry-form");
     if ((event.data?.iframeHeight) && (enquiryFormIframe)) {
       enquiryFormIframe.style.height = event.data?.iframeHeight + "px";
