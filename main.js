@@ -1,16 +1,10 @@
-const getQueryParam = (name) => {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(name);
-}
-
-// Specifically for CFP
-const trustedOrigins = [
-  "https://site-kkdli.powerappsportals.com",        // WLSQ DEV
-  "https://site-tt3fl.powerappsportals.com",        // WLSQ UAT
-  "https://wlsq-referral-form.powerappsportals.com, // WLSQ Prod
-  "https://site-q89tn.powerappsportals.com",        // MLC Dev
-  "https://site-jtiyc.powerappsportals.com",        // MLC UAT
-  "https://mlc-enquiry-form.powerappsportals.com"   // MLC Prod
+ 
+  "https://site-kkdli.powerappsportals.com",         // WLSQ DEV
+  "https://site-tt3fl.powerappsportals.com",         // WLSQ UAT
+  "https://wlsq-referral-form.powerappsportals.com", // WLSQ Prod
+  "https://site-q89tn.powerappsportals.com",         // MLC Dev
+  "https://site-jtiyc.powerappsportals.com",         // MLC UAT
+  "https://mlc-enquiry-form.powerappsportals.com"    // MLC Prod
 ];
 
 let ignoreMessages;
