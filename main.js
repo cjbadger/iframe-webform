@@ -5,16 +5,20 @@ const getQueryParam = (name) => {
 
 // Specifically for CFP
 const trustedOrigins = [
-  "https://site-kkdli.powerappsportals.com",       // WLSQ DEV
-  "https://site-tt3fl.powerappsportals.com",       // WLSQ UAT
-  "https://site-q89tn.powerappsportals.com",       // MLC Dev
-  "https://site-jtiyc.powerappsportals.com",       // MLC UAT
-  "https://mlc-enquiry-form.powerappsportals.com"  // MLC Prod
-]
+  "https://site-kkdli.powerappsportals.com",        // WLSQ DEV
+  "https://site-tt3fl.powerappsportals.com",        // WLSQ UAT
+  "https://wlsq-referral-form.powerappsportals.com, // WLSQ Prod
+  "https://site-q89tn.powerappsportals.com",        // MLC Dev
+  "https://site-jtiyc.powerappsportals.com",        // MLC UAT
+  "https://mlc-enquiry-form.powerappsportals.com"   // MLC Prod
+];
+
+let ignoreMessages;
 
 document.addEventListener("DOMContentLoaded", () => {
   const iframe = document.getElementById("enquiry-form");
   const urlParam = getQueryParam("url");
+  ignoreMessages = getQueryParam("ignore");
   if (iframe && urlParam) {
     iframe.src = decodeURIComponent(urlParam);
   } else {
@@ -24,6 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const EnquiryFormResizeHandler = () => {
+  if (ignoreMessages) {
+    return;
+  }
   window.addEventListener("message", (event) => {
     if (!trustedOrigins.includes(event.origin)) {
       console.log(`${event.origin} is not a trusted origin`);
