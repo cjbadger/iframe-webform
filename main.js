@@ -14,15 +14,11 @@ const trustedOrigins = [
 ];
 
 let ignoreMessages;
-let delay;
 
 document.addEventListener("DOMContentLoaded", () => {
   const iframe = document.getElementById("enquiry-form");
   const urlParam = getQueryParam("url");
   ignoreMessages = getQueryParam("ignore");
-  delay = getQueryParam("delay");
-  let delayNumber = Number(delay);
-  delayNumber = !isNaN(delayNumber) ? delayNumber : 0;
   
   if (iframe && urlParam) {
     iframe.src = decodeURIComponent(urlParam);
@@ -45,9 +41,7 @@ const EnquiryFormResizeHandler = () => {
     console.log(`${event.origin} is a trusted origin`);
     const enquiryFormIframe = document.getElementById("enquiry-form");
     if ((event.data?.iframeHeight) && (enquiryFormIframe)) {
-      setTimeout(() => {
       enquiryFormIframe.style.height = event.data?.iframeHeight + "px";
-      }, delayNumber);
     }
   });
 };
